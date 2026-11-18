@@ -1,2 +1,6 @@
 $kind: collection
 description: ""
+auth:
+  type: bearer
+  credentials:
+    token: 3|oBHLUQrufYnUuFeyWhXlp340OpmNT6JFG4TBsYfj060a9570

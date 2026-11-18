@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://127.0.0.1:8000/api/tasks/01a1ec54-3413-7015-ba97-644de71c0f5b
+method: DELETE
+order: 5000

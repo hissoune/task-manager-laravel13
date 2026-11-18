@@ -15,10 +15,9 @@ class AuthenticatedController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        $request->authenticate();
-        $user = $request->user();
-        $tokens = $user->createToken('auth_token')->plainTextToken;
-        return response()->json(['tokens' => $tokens]);
+        $user = $request->authenticate();
+        $token = $user->createToken('auth_token')->plainTextToken;
+        return response()->json(['user' => $user, 'token' => $token]);
     }
 
     /**

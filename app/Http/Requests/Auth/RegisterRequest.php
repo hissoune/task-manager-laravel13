@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\UserRole;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules;
@@ -26,6 +27,7 @@ class RegisterRequest extends FormRequest
          return [
             'name' => ['required', 'string', 'min:5'],
             'email' => ['required', 'string', 'email'],
+            'role' => ['optional', 'string', 'in:' . UserRole::SUPERVISOR->value . ',' . UserRole::EMPLOYEE->value],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ];
     }
